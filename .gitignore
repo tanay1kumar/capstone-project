@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+vectorstore/
+data/
+skills/*/downloads/
+.DS_Store
+*.docx
+prompt.md

@@ -1,0 +1,28 @@
+# LLM & RAG
+anthropic
+langchain
+langchain-anthropic
+langchain-community
+langchain-huggingface
+langchain-chroma
+
+# Vector DB
+chromadb
+
+# PDF parsing
+pypdf
+pymupdf
+
+# Embeddings (local, free)
+sentence-transformers
+
+# Browser Agent
+browser-use
+langgraph
+playwright
+
+# UI
+streamlit
+
+# Utilities
+python-dotenv
