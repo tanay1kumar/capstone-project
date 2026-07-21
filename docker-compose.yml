@@ -6,19 +6,21 @@ services:
     ports:
       - "8501:8501"
     volumes:
-      - ./data:/app/data               # PDFs persist outside the container
-      - ./vectorstore:/app/vectorstore # ChromaDB index persists outside the container
+      - ./data:/app/data
+      - ./vectorstore:/app/vectorstore
+      - hf_cache:/root/.cache/huggingface
     env_file:
       - .env
-    depends_on:
-      - agent
 
   agent:
     build:
       context: .
       dockerfile: Dockerfile.agent
     volumes:
-      - ./skills:/app/skills           # SKILL.md files (read by agent)
-      - ./data:/app/data               # agent writes downloaded PDFs here
+      - ./skills:/app/skills
+      - ./data:/app/data
     env_file:
       - .env
+
+volumes:
+  hf_cache:

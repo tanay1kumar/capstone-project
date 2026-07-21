@@ -4,15 +4,13 @@ rag chatbot for sec regulatory documents + a browser agent that auto downloads t
 
 ## setup
 ```bash
-python3.12 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-playwright install chromium
 cp .env.example .env  # add ANTHROPIC_API_KEY
+docker compose build
 ```
 
 ## usage
 ```bash
-python -m agent.main sec_gov   # download pdfs
-python rag/ingest.py           # index them
-streamlit run app.py           # start chatbot
+docker compose run agent python -m agent.main sec_gov  # download pdfs
+docker compose run app python rag/ingest.py            # index them
+docker compose up app                                  # start chatbot at localhost:8501
 ```
